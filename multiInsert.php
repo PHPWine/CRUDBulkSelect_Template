@@ -5,7 +5,7 @@ define('PHPWINE_DEBUG_ERRORS', true );
 
 $bulk_crud = new class {
     
-    public ?string $form_new_person; 
+    public ?string $person; 
 
     public function __construct() {
       
@@ -72,7 +72,7 @@ $bulk_crud = new class {
 
       print form( function() { 
         
-        $this->form_new_person = div([ CHILD => [
+        $this->person = div([ CHILD => [
 
         ['div', INNER => [
             
@@ -110,7 +110,7 @@ $bulk_crud = new class {
 
           ]]);
 
-        return ($this->form_new_person . $btn_insert_data);
+        return ($this->person . $btn_insert_data);
 
         }, [['method'],['POST']]);
 
@@ -136,7 +136,7 @@ $bulk_crud = new class {
       
           $('#btn-addmore').click(function(e) { e.preventDefault();
       
-              $('.add_friend_form').append(`<?php echo __HR() . $this->form_new_person; ?>`);
+              $('.add_friend_form').append(`<?php echo __HR() . $this->person; ?>`);
           
            });
       
