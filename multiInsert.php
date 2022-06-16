@@ -5,7 +5,7 @@ define('PHPWINE_DEBUG_ERRORS', true );
 
 $bulk_crud = new class {
     
-    public ?string $person; 
+    public ?string $form_new_person; 
 
     public function __construct() {
       
@@ -72,28 +72,32 @@ $bulk_crud = new class {
 
       print form( function() { 
         
-        $this->person = div([ CHILD => [
+        $form_new_person = div(function() {
 
-        ['div', INNER => [
-            
-            ['label', VALUE => ['Friend name : ']],
-            ['input', ATTR  => ['type' => 'text','name' => 'friend_name[]']]
+           $this->person = div([ CHILD => [
 
-        ]],
-        ['div', INNER => [
-            
-            ['label', VALUE => ['Friend mobile : ']],
-            ['input', ATTR  => ['type' => 'text','name' => 'friend_mobile[]']]
+              ['div', INNER => [
+                  
+                  ['label', VALUE => ['Friend name : ']],
+                  ['input', ATTR  => ['type' => 'text','name' => 'friend_name[]']]
+      
+              ]],
+              ['div', INNER => [
+                  
+                  ['label', VALUE => ['Friend mobile : ']],
+                  ['input', ATTR  => ['type' => 'text','name' => 'friend_mobile[]']]
+      
+              ]],
+              ['div', INNER => [
+                  
+                  ['label', VALUE => ['Friend email : ']],
+                  ['input', ATTR  => ['type' => 'text','name' => 'friend_email[]']]
+      
+              ]],
+    
+           ]]); return ($this->person);
 
-        ]],
-        ['div', INNER => [
-            
-            ['label', VALUE => ['Friend email : ']],
-            ['input', ATTR  => ['type' => 'text','name' => 'friend_email[]']]
-
-        ]],
-
-      ]],[['class'],['add_friend_form']]);
+        },[['class'],['add_friend_form']]);
 
       $btn_insert_data = div([ CHILD => [
             
@@ -110,7 +114,7 @@ $bulk_crud = new class {
 
           ]]);
 
-        return ($this->person . $btn_insert_data);
+        return ($form_new_person . $btn_insert_data);
 
         }, [['method'],['POST']]);
 
@@ -133,7 +137,7 @@ $bulk_crud = new class {
        <script>
 
        $('document').ready(function() {
-      
+
           $('#btn-addmore').click(function(e) { e.preventDefault();
       
               $('.add_friend_form').append(`<?php echo __HR() . $this->person; ?>`);
