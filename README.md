@@ -33,8 +33,6 @@ INSERT INTO `crud` (`friend_name`, `friend_mobile`, `friend_email`) VALUES
 Download <a href="https://github.com/nielsofficeofficial/PHPWine"> PHPWine > </a> <br />
 Download <a href="https://github.com/nielsofficeofficial/PHPCrud"> PHPCrud > </a>
 
-Article Link: https://nielsoffice197227997.wordpress.com/2022/03/05/phpcrud-sample-data-phpwine-v1-2-10/
-
 <h2>Thanks To:</h2>
 <h5>
 Github : To allow me to upload my PHPWine plugin Vanilla Flavour to repository<br /> 
