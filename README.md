@@ -1,5 +1,5 @@
-# PHPCrud-sample-data
-Support PHPWine v1.2.09
+# CRUDBulkSelect_Template
+Support PHPWine v1.4
 
 Create Crud with Boostrap sample data 
 
