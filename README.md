@@ -1,9 +1,9 @@
-# PHPCrud-sample-data
-Support PHPWine v1.2.09
+# CRUDBulkSelect_Template
+Support PHPWine v1.4
 
 Create Crud with Boostrap sample data 
 
-```PHP
+```SQL
 // SQL 
 CREATE TABLE `crud` (
 
@@ -13,20 +13,25 @@ CREATE TABLE `crud` (
  `friend_email` varchar(255) NOT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `crud`
+  ADD PRIMARY KEY (`friend_id`);
+  
+ALTER TABLE `crud`
+  MODIFY `friend_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
 ```
 
 ```SQL
-INSERT INTO `crud` (`friend_id`, `friend_name`, `friend_mobile`, `friend_email`) VALUES
-('Nikkie The Drummer'    , '000.000.000' , 'nikki@mail.com'),
-('Marian The Base Guitar', '000.000.000' , 'marian@mail.com'),
-('Japz The Song Leader'  , '000.000.000' , 'japz@mail.com'),
-('Niel The All around'   , '000.000.000' , 'niel@mail.com');
+INSERT INTO `crud` (`friend_name`, `friend_mobile`, `friend_email`) VALUES
+('Nikkie The Drummer'    , '999.999.999' , 'nikki@mail.com'),
+('Marian The Base Guitar', '999.999.999' , 'marian@mail.com'),
+('Japz The Song Leader'  , '999.999.999' , 'japz@mail.com'),
+('Niel The All around'   , '999.999.999' , 'niel@mail.com');
 ```
 
 Download <a href="https://github.com/nielsofficeofficial/PHPWine"> PHPWine > </a> <br />
 Download <a href="https://github.com/nielsofficeofficial/PHPCrud"> PHPCrud > </a>
-
-Article Link: https://nielsoffice197227997.wordpress.com/2022/03/05/phpcrud-sample-data-phpwine-v1-2-10/
 
 <h2>Thanks To:</h2>
 <h5>
