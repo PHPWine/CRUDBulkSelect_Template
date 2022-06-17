@@ -124,7 +124,7 @@ $bulk_crud = new class {
 
         },[['class'],['add_friend_form']]);
 
-      $btn_insert_data = div([ CHILD => [
+        $btn_insert_data = div([ CHILD => [
             
             ['input', ATTR => [
                 'type' => 'submit', 'name' => 'insertData',
@@ -135,11 +135,11 @@ $bulk_crud = new class {
                 'id'   => 'btn-addmore'
             ]],
 
-          ]]);
+        ]]);
 
         return ($form_new_person . $btn_insert_data);
 
-        }, [['method'],['POST']]);
+      }, [['method'],['POST']]);
 
     }
 
