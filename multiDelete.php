@@ -61,7 +61,7 @@ $bulk_crud = new class {
    **/
      private function fetch_persons_bulk() : void {
       
-            $this->read = wine_fetch( 'crud', [ 'mixed' => [ "SELECT * FROM  Crud ORDER BY friend_id DESC " ]  ] 
+            $this->read = wine_fetch( '', [ 'mixed' => [ "SELECT * FROM  Crud ORDER BY friend_id DESC " ]  ] 
                                 
             ,function( $read )  {  
             
