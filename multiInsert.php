@@ -127,15 +127,13 @@ $bulk_crud = new class {
       $btn_insert_data = div([ CHILD => [
             
             ['input', ATTR => [
-                'type' => 'submit',
-                'name' => 'insertData',
+                'type' => 'submit', 'name' => 'insertData',
                 'id'   => 'btn-submit'
-              ]],
-              ['input', ATTR => [
-                'type' => 'button',
-                'value'=> 'Add more',
+            ]],
+            ['input', ATTR => [
+                'type' => 'button', 'value'=> 'Add more',
                 'id'   => 'btn-addmore'
-              ]],
+            ]],
 
           ]]);
 
