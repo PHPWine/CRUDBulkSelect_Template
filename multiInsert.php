@@ -5,14 +5,21 @@ define('PHPWINE_DEBUG_ERRORS', true );
 
 $bulk_crud = new class {
     
-    public ?string $form_new_person; 
+ /**
+  * @var 
+  * @property string null 
+  * Defined : null property form appending on add more
+  * @since v1.3.1.0
+  * @since 03.11.2022
+  **/
+    public ?string $person; 
 
     public function __construct() {
       
       $this->php_wine('autoload');
     
       new \PHPWineVanillaFlavour\Wine\Optimizer\Html;
-      new \PHPWineVanillaFlavour\Wine\Optimizer\EnhancerElem; // this is mandatory when dev use merge !
+      new \PHPWineVanillaFlavour\Wine\Optimizer\EnhancerElem; 
       new \PHPWineVanillaFlavour\Wine\Optimizer\EnhancerHLine;
       new \PHPWineVanillaFlavour\Wine\Optimizer\EnhancerAttr;
       new \PHPWineVanillaFlavour\Wine\Optimizer\HtmlDiv;
@@ -20,10 +27,20 @@ $bulk_crud = new class {
 
       new \PHPWineVanillaFlavour\Plugins\PHPCrud\Crud\Wine\VanillaCreate;
 
+      // session set!
+      if( isset($_GET['create-succesfully']) ) { echo $_SESSION['create']; } 
+
+      // execution
       $this->execute_bulk_selection();
-      
+     
     }
 
+  /**
+   * Defined: execute_bulk_selection 
+   * @since PHPWine v1.4
+   * @since PHPCrud Vanilla v1.3.1.0
+   * @since 17.06.2022
+   **/
     private function execute_bulk_selection() : void {
 
       $this->insert_new_person();
@@ -32,9 +49,14 @@ $bulk_crud = new class {
 
     }
 
+  /**
+   * Defined: insert new data to database with arrays of datas
+   * @since PHPWine v1.4
+   * @since PHPCrud Vanilla v1.3.1.0
+   * @since 17.06.2022
+   **/    
     private function insert_new_person() : void {
       
-      // Begin process insert data and add more or multi fields
       if(isset($_REQUEST['insertData']) == true ) {
  
        for ( $inputData = 0; $inputData < count($_POST['friend_name']) ; $inputData++ ) { 
@@ -59,15 +81,18 @@ $bulk_crud = new class {
                                      
            } 
    
-       }
+        }
      
      }
-   
-     if( isset($_GET['create-succesfully']) ) { echo $_SESSION['create']; } 
  
-     }
+    }
 
-    // adding form and insert data begin !
+  /**
+   * Defined: form add new person
+   * @since PHPWine v1.4
+   * @since PHPCrud Vanilla v1.3.1.0
+   * @since 17.06.2022
+   **/   
     private function add_new_person() : void {
 
       print form( function() { 
@@ -95,7 +120,7 @@ $bulk_crud = new class {
       
               ]],
     
-           ]]); return ($this->person);
+           ]],[['class'],['forms-request']]); return ($this->person);
 
         },[['class'],['add_friend_form']]);
 
@@ -120,6 +145,12 @@ $bulk_crud = new class {
 
     }
 
+  /**
+   * Defined: ftr JS installation
+   * @since PHPWine v1.4
+   * @since PHPCrud Vanilla v1.3.1.0
+   * @since 17.06.2022
+   **/   
     private function footer_section() : void {
 
       print ATTR( 'SCRIPT' , [
@@ -132,24 +163,30 @@ $bulk_crud = new class {
        
           ]
        
-          ]); ?>
+      ]); ?>
             
-       <script>
+  <script>
 
-       $('document').ready(function() {
+  $('document').ready(function() {
 
-          $('#btn-addmore').click(function(e) { e.preventDefault();
+   $('#btn-addmore').click(function(e) { e.preventDefault();
+
+     $('.add_friend_form').append(`<?php echo __HR() . $this->person; ?>`);
+  
+   });
       
-              $('.add_friend_form').append(`<?php echo __HR() . $this->person; ?>`);
-          
-           });
+  });
       
-       });
-      
-      </script>
+  </script>
        
   <?php }
 
+  /**
+   * Defined: PHPWine Loader
+   * @since PHPWine v1.4
+   * @since PHPCrud Vanilla v1.3.1.0
+   * @since 17.06.2022
+   **/   
     private function php_wine(string $autoload) : void {
 
       require dirname(__FILE__) . DIRECTORY_SEPARATOR .'vendor/' . $autoload.'.'.'php';
@@ -158,5 +195,13 @@ $bulk_crud = new class {
 
  }; 
    
-?>
+/**
+ * 
+ * Would you like me to treat a cake and coffee ?
+ * Become a donor, Because with you! We can build more...
+ * Donate:
+ * GCash : +639650332900
+ * Paypal account: syncdevprojects@gmail.com
+ * 
+ **/
 
