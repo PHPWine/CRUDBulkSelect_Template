@@ -102,7 +102,7 @@ $bulk_crud = new class {
 
                     ['input', ATTR => [
                         'type'  => 'checkbox',
-                        'name'  => 'editid[]',
+                        'name'  => 'bulkeditid[]',
                         'value' => $value["friend_id"],
                         'class' => 'bulkEditFriend'
                     ]]
@@ -302,7 +302,7 @@ $bulk_crud = new class {
 
     if(isset($_REQUEST['bulkEditAll']) == true ) : 
 
-      $this->edit_id  = $_POST['editid'];
+      $this->edit_id  = $_POST['bulkeditid'];
 
       $this->update_fetch_persons_bulk( $this->edit_id );
      
