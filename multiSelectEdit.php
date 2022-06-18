@@ -63,7 +63,7 @@ $bulk_crud = new class {
 
                    ['input', ATTR => [
                        'type'  => 'checkbox',
-                       'name'  => 'editid[]',
+                       'name'  => 'bulkEditId[]',
                        'value' => $value["friend_id"],
                        'class' =>'bulkEditFriend'
                    ]]

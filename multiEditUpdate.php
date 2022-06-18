@@ -49,7 +49,7 @@ $bulk_crud = new class {
 
     if(isset($_REQUEST['bulkEditAll']) == true ) : 
 
-      $this->edit_id  = $_POST['editid'];
+      $this->edit_id  = $_POST['bulkEditId'];
 
       $this->fetch_persons_bulk( $this->edit_id );
      
