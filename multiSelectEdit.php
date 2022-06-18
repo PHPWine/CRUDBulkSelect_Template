@@ -167,3 +167,13 @@ $bulk_crud = new class {
    }
 
 }; 
+
+/**
+ * 
+ * Would you like me to treat a cake and coffee ?
+ * Become a donor, Because with you! We can build more...
+ * Donate:
+ * GCash : +639650332900
+ * Paypal account: syncdevprojects@gmail.com
+ * 
+ **/
