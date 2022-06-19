@@ -1,8 +1,6 @@
 # CRUDBulkSelect_Template
 Support PHPWine v1.4
 
-Create Crud with Boostrap sample data 
-
 ```SQL
 // SQL 
 CREATE TABLE `crud` (
